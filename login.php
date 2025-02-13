@@ -17,7 +17,7 @@ session_start();
 	if(isset($_POST['submit']))
 	{	
 
-	
+
 		//$eve = "select * from res_user_master where uname='$par1' and umobile='$par2'";
 		$q = $db7->prepare("select * from res_branch_master where username=:p1 and password=:p2");
 		$q->bindValue(':p1', "$par1");

@@ -1,7 +1,6 @@
 <!-- insert.php -->
 <?php
 include "../connect.php";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $username = $_POST['username'];

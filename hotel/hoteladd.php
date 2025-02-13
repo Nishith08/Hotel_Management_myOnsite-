@@ -8,7 +8,6 @@ include  "../connect.php";
 		//header('Location: index.php');
 		return;
 	} 
-
 ?>
 <!DOCTYPE html>
 <html>

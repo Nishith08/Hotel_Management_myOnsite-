@@ -42,7 +42,6 @@ include  "../connect.php";
                    
                             <!-- BEGIN PORTLET-->
                                 <div class="portlet-title">
-                                  
 										<h2> Welcome To <?php echo $bname; ?> </h2>
 										</div>
 					</div>

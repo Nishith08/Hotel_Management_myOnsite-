@@ -16,7 +16,6 @@ session_start();
 	
 	if(isset($_POST['submit']))
 	{
-
 	
 		//$eve = "select * from res_user_master where uname='$par1' and umobile='$par2'";
 		$q = $db7->prepare("select * from res_user_master where uname=:p1 and umobile=:p2");
