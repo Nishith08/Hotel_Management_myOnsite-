@@ -20,6 +20,8 @@ include  "../connect.php";
     <h2>Create Hotel</h2>
     <form id="createForm">
         Name: <input type="text" name="name" required><br>
+        Username: <input type="text" name="username" required><br>
+        Password: <input type="text" name="password" required><br>
         <br>
         <input type="submit" value="Create">
     </form>

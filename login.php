@@ -19,7 +19,7 @@ session_start();
 
 	
 		//$eve = "select * from res_user_master where uname='$par1' and umobile='$par2'";
-		$q = $db7->prepare("select * from res_user_master where uname=:p1 and umobile=:p2");
+		$q = $db7->prepare("select * from res_branch_master where username=:p1 and password=:p2");
 		$q->bindValue(':p1', "$par1");
 		$q->bindValue(':p2',  "$par2");
 		$q->execute();
@@ -32,12 +32,9 @@ session_start();
 				
 					$_SESSION['login'] = "yes";
 				
-					$_SESSION['umid'] = $rt['umid'];
-					$_SESSION['uname'] = $rt['uname'];
-					
-					$_SESSION['umobile'] = $rt['umobile'];
-					
 					$_SESSION['branchid'] = $rt['branchid'];
+					//$_SESSION['bname'] = $rt['bname'];
+					
 			
 			 
 			header('Location: dashboard/dashboard.php');
