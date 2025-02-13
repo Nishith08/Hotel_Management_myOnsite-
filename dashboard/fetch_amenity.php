@@ -9,11 +9,26 @@ if ($result->num_rows > 0) {
         echo "<tr>
             <td>" . $row["roomid"] . "</td>
             <td>" . $row["rname"] . "</td>
-            <td>" . $row["status"] . "</td>
+			";
+			$roomId = $row["roomid"];
+$sql4 = "SELECT amenitiesname 
+         FROM res_amenities_master 
+         WHERE FIND_IN_SET('$roomId', roomid) > 0";
+$result4 = $conn->query($sql4);
+//<button onclick='deleteUser(" . $row["branchid"] . ")'>Delete</button>
+$amenitiesNames = [];
+if ($result4->num_rows > 0) {
+    while($row4 = $result4->fetch_assoc()) {
+        $amenitiesNames[] = $row4["amenitiesname"];
+	}
+}
+
+echo "<td>" . implode(", ", $amenitiesNames) . "</td>";
+			echo"
+            
            
             <td>
                 <button onclick='addAmenity(" . $row["roomid"] . ")'>Add More</button>
-                <button onclick='deleteRoom(" . $row["roomid"] . ")'>Delete</button>
                 
             </td>
         </tr>";

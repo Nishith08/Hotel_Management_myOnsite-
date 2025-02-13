@@ -86,7 +86,7 @@ include  "../connect.php";
 										<h1> Amenity List<span></h1>
 										</div>
                                     
-									<button  onClick="document.location.href='roomadd.php'">
+									<button  onClick="document.location.href='amenityadd.php'">
 										Add New 
 										
 									</button>
@@ -151,7 +151,8 @@ include  "../connect.php";
 										
 									</button>
 					</div>
-                   
+                  
+				   
 <script>	
 	 $(document).ready(function() {
         function loadUsers() {

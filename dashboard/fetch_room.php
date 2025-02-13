@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
             <td>" . $row["status"] . "</td>
            
             <td>
-                <button onclick='addAmenity(" . $row["roomid"] . ")'>Change</button>
+                <button onclick='updateRoom(" . $row["roomid"] . ")'>Change</button>
                 <button onclick='deleteRoom(" . $row["roomid"] . ")'>Delete</button>
                 
             </td>

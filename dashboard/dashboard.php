@@ -62,7 +62,7 @@ include  "../connect.php";
 									
                                   <br>
                                   <br>
-									<button  onClick="document.location.href='room.php'">
+									<button  onClick="document.location.href='room_rates.php'">
 										Rate Management
 										
 									</button>
