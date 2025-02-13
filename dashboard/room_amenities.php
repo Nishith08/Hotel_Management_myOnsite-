@@ -2,12 +2,12 @@
 session_start(); 
 /*Country List page */
 include  "../connect.php";
-	
-	/* if(!isset($_SESSION['yes']))
+	$branchid = $_SESSION['branchid'];
+	 if(!isset($_SESSION['login']))
 	{
-		//header('Location: index.php');
+		header('Location: index.php');
 		return;
-	} */
+	} 
 
 ?>
 <!DOCTYPE html>
@@ -111,7 +111,7 @@ include  "../connect.php";
 					<br>
 					<div class="form-box">
 					 <form id="editForm">
-        <input type="text" name="id" id="userId">
+        <input type="hidden" name="id" id="userId"  >
         Room: <input type="text" name="name" id="userName" readonly>
         <br>
 		<br>
@@ -120,7 +120,7 @@ include  "../connect.php";
                                                                     <select class="form-control select2" name="amenity[]" multiple >
 																	
 																	<?php
-																	$eq="Select * from res_amenities_master";
+																	$eq="Select * from res_amenities_master where branchid=$branchid";
 																	$re=mysqli_query($conn,$eq);
 																	if(mysqli_num_rows($re) > 0)
 																	{

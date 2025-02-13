@@ -1,7 +1,5 @@
 <?php
-
-
-   session_start();
+ session_start();
  unset($_SESSION['login']);
 	include('connect.php');
 		
@@ -284,3 +282,93 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+$sql = "SELECT COUNT(*) as count FROM information_schema.COLUMNS 
+        WHERE TABLE_NAME = 'res_room_master' 
+        AND COLUMN_NAME = 'branchid' 
+        AND TABLE_SCHEMA = 'myonsite_hms'";
+
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+
+if ($row['count'] == 0) {
+
+    
+   
+
+    $sql44 = "ALTER TABLE `res_room_master` ADD `branchid` INT NOT NULL DEFAULT '1' AFTER `status`";
+
+    if ($conn->query($sql44) === TRUE) {
+     
+    } else {
+     
+    }
+
+    $conn->close();
+} else {
+    
+}
+$sql2 = "SELECT COUNT(*) as count FROM information_schema.COLUMNS 
+        WHERE TABLE_NAME = 'res_amenities_master' 
+        AND COLUMN_NAME = 'branchid' 
+        AND TABLE_SCHEMA = 'myonsite_hms'";
+
+$result2 = $conn->query($sql2);
+$row2 = $result2->fetch_assoc();
+
+if ($row2['count'] == 0) {
+
+    
+   
+
+    $sql22 = "ALTER TABLE `res_amenities_master` ADD `branchid` INT NOT NULL DEFAULT '1' AFTER `roomid`";
+
+    if ($conn->query($sql22) === TRUE) {
+     
+    } else {
+     
+    }
+
+    $conn->close();
+} else {
+    
+}
+
+
+?>

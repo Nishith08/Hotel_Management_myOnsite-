@@ -1,7 +1,8 @@
 <?php
+session_start();
 include "../connect.php";
-
-$sql = "SELECT * FROM res_room_master";
+$branchid = $_SESSION['branchid'];
+$sql = "SELECT * FROM res_room_master where branchid=$branchid";
 $result = $conn->query($sql);
 //<button onclick='deleteUser(" . $row["branchid"] . ")'>Delete</button>
 if ($result->num_rows > 0) {
